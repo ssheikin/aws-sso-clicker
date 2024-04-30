@@ -24,3 +24,9 @@ aws sso login --sso-session ${SSO_SESSION_NAME} --no-browser | ~/go/bin/aws-sso-
 **Note:** Browser has to be started with `--remote-debugging-port=9222` 
 Or if browser is started from intellij it already has it.
 More details: https://github.com/go-rod/go-rod.github.io/blob/main/custom-launch.md#custom-browser-launch
+
+### Manual testing
+
+Redirection to file may be useful for manual testing. Later feed it as `/tmp/a` or (`/tmp/b` as more generalized) as 
+Intellij -> Runtime Configuration -> Redirect input from 
+`aws sso login --sso-session ${SSO_SESSION_NAME} --no-browser > /tmp/a | (while ! grep user_code /tmp/a ; do sleep 1; done && grep user_code /tmp/a > /tmp/b)`
