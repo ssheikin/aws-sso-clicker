@@ -14,7 +14,7 @@ import (
 )
 
 // Time before MFA step times out
-const MFA_TIMEOUT = 10
+const MFA_TIMEOUT = 20
 
 var cfg = yacspin.Config{
 	Frequency:         100 * time.Millisecond,
